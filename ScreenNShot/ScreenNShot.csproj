@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\sns.ico</ApplicationIcon>
+    <StartupObject>ScreenNShot.Program</StartupObject>
+    <Company>elBandoler</Company>
+    <Authors>Roi Gerszkoviez - elBandoler</Authors>
+    <Copyright>All rights reserved (c) Roi Gerszkoviez - elBandoler - bandoler.com</Copyright>
+    <AssemblyName>Screen&amp;Shot</AssemblyName>
+    <AssemblyVersion>0.9.1.0</AssemblyVersion>
+    <FileVersion>0.9.1.0</FileVersion>
+    <Version>0.9.1.0</Version>
+    <Description>Screen &amp; Shot is a screen shooting utility, that allows you to make a PDF out of multiple screenshots.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Roi\.nuget\packages\pdfsharpcore.pdfsharp\1.50.0-beta5-5\contentFiles\any\netstandard2.0\SharpZipLib\ReadMe.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.50.0.2250" />
+    <PackageReference Include="NHotkey" Version="2.1.0" />
+    <PackageReference Include="NHotkey.WindowsForms" Version="2.1.0" />
+    <PackageReference Include="PdfSharpCore.PdfSharp" Version="1.50.0-beta5-5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>
